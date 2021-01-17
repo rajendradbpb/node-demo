@@ -1,1 +1,2 @@
+- added promise
 - added logger with winston
