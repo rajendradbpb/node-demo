@@ -1,8 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var usersRouter = require("./users")
-var loggerRouter = require("./logger-route")
-var promiseRouter = require("./promise-route")
+var usersRouter = require("./users");
+var loggerRouter = require("./logger-route");
+var promiseRouter = require("./promise-route");
+var dbConnRouter = require("./db-conn");
+var errorRoutes = require("./error-route");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -11,5 +13,7 @@ router.get('/', function(req, res, next) {
 router.use('/logger', loggerRouter);
 router.use('/promise', promiseRouter);
 router.use('/users', usersRouter);
+router.use('/db', dbConnRouter);
+router.use('/error', errorRoutes);
 
 module.exports = router;
