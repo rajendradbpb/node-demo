@@ -5,6 +5,7 @@ var loggerRouter = require("./logger-route");
 var promiseRouter = require("./promise-route");
 var dbConnRouter = require("./db-conn");
 var errorRoutes = require("./error-route");
+var mailRoutes = require("./mail-routes");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,5 +16,6 @@ router.use('/promise', promiseRouter);
 router.use('/users', usersRouter);
 router.use('/db', dbConnRouter);
 router.use('/error', errorRoutes);
+router.use('/mail', mailRoutes);
 
 module.exports = router;
